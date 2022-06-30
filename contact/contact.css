@@ -1,0 +1,94 @@
+body {
+    background-image: url("C:\\Users\\dcrash0veride\\vscodeProjects\\resume\\images\\sun-g09d120117_1920.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 6rem;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bolder;
+    color: #c99de3;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    align-items: center;
+    color: #c99de3;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: bolder;
+    font-size: 2rem;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(1.25rem);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+    border-radius: 0.5rem;
+}
+
+.first-name__input {
+    align-self: flex-start;
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 3rem;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(1.25rem);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+    border-radius: 0.5rem;
+}
+
+.email-address__input {
+    align-self: flex-start;
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 3rem;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(1.25rem);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+    border-radius: 0.5rem;
+}
+
+.subject-textarea {
+    align-self: flex-start;
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 3rem;
+    height: 10rem;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(1.25rem);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+    border-radius: 0.5rem;
+}
+
+.submit-button {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(1.25rem);
+    border-top: 1px solid rgba(255,255,255,0.2);
+    border-left: 1px solid rgba(255,255,255,0.2);
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.2);
+    border-radius: 0.5rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.form {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}

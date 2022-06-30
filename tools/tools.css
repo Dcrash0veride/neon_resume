@@ -1,0 +1,39 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    background-size: cover;
+}
+
+.tv-static {
+    width: 90vw;
+    height: 80vh;
+    background-image: repeating-radial-gradient(circle at 17% 32%, white, black 0.00085px);
+    animation: tv-static 5s linear 1;
+    border: 0.25rem solid whitesmoke ;
+    border-radius: 20% 20% 20% 20%;
+}
+
+.overlay-tv {
+    position: absolute;
+    width: 90vw;
+    height: 80vh;
+    margin: auto;
+    border: 0.25rem solid whitesmoke ;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+.overlay-tv:hover {
+    opacity: 1;
+}
+
+@keyframes tv-static {
+    from {
+        background-size: 100% 100%;
+    }
+
+    to {
+        background-size: 200% 200%;
+    }
+}
