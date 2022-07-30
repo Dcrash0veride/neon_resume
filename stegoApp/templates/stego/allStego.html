@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Montserrat:wght@300&family=Ubuntu:wght@300&family=Orbitron:wght@900&display=swap" rel="stylesheet">
+<link href="/static/contact/shared.css" rel="stylesheet">
+    <link href="/static/stego/stego/stego.css" rel="stylesheet">
+    {% load custom_tags %}
+<title>JM</title>
+</head>
+<body>
+  <header class="nav-bar">
+        <div class="nav-bar__brand">
+            <a href="{% url 'index' %}" class="normal-nav">Schwa</a>
+        </div>
+        <nav class="main-nav">
+            <div>
+                <ul class="nav-bar__items">
+                    <li class="nav-bar__item">
+                        <a class="normal-nav" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    <li class="nav-bar__item">
+                        <a class="normal-nav" href="{% anchor 'index' 'tool-list' %}">Tools</a>
+                    </li>
+                    <li class="nav-bar__item">
+                        <a class="normal-nav nav-bar__cta" href="{% url 'resume' %}">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+{% for image in encoded_images %}
+  {% if image.webLink %}
+<div class="imageHolder"><img src="{{ image.weblink }}"><a href="{{ image.webLink }}">Link</a></div>
+  {% endif %}
+{% endfor %}

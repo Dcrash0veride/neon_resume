@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Montserrat:wght@300&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    {% load custom_tags %}
+<title>JM</title>
+</head>
+
+<body>
+    <header class="nav-bar">
+        <div class="nav-bar__brand">
+            <a href="{% url 'index' %}" class="normal-nav">Schwa</a>
+        </div>
+        <nav class="main-nav">
+            <div>
+                <ul class="nav-bar__items">
+                    <li class="nav-bar__item">
+                        <a class="normal-nav" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    <li class="nav-bar__item">
+                        <a class="normal-nav" href="#tool-list">Tools</a>
+                    </li>
+                    <li class="nav-bar__item">
+                        <a class="normal-nav nav-bar__cta" href="{% url 'resume' %}">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+           <button class="toggle-button">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <span class="toggle-button__bar"></span>
+            <span class="toggle-button__bar"></span>
+                <span class="toggle-button__bar"></span></a>
+        </button>
+    </header>
+{% load static_files %}
+<script src="{% static 'shared.js' %}"></script>

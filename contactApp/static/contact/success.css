@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+}
+
+.successText {
+    color: white;
+    font-size: 2.5rem;
+    margin: auto;
+    text-align: center;
+}
+
+.imageSuccess {
+    margin: auto;
+    text-align: center;
+}
+
+.successParagraph {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Montserrat:wght@300&family=Ubuntu:wght@300&family=Orbitron:wght@900&display=swap" rel="stylesheet">
+<link href="/static/contact/shared.css" rel="stylesheet">
+    <link href="/static/stego/stego/stego.css" rel="stylesheet">
+    {% load custom_tags %}
+<title>JM</title>
+</head>
+<body onresize="windowSize()">
+  <header class="nav-bar">
+        <div class="nav-bar__brand">
+            <a href="{% url 'index' %}" class="normal-nav">Schwa</a>
+        </div>
+         <nav class="main-nav">
+            <div>
+                <ul class="nav-bar__items">
+                    <li class="nav-bar__item">
+                        <a class="normal-nav" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    <li class="nav-bar__item">
+                        <a class="normal-nav" href="{% anchor 'index' 'tool-list' %}">Tools</a>
+                    </li>
+                    <li class="nav-bar__item">
+                        <a class="normal-nav nav-bar__cta" href="{% url 'resume' %}">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+           <button class="toggle-button">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <span class="toggle-button__bar"></span>
+            <span class="toggle-button__bar"></span>
+                <span class="toggle-button__bar"></span></a>
+        </button>
+    </header>
+  <div class="bg"></div>
+  <div class="fadeIn">
+<h1 class="headerText">What is Stego?</h1>
+      <p class="whatText">Steganography is the art of hiding data in plain sight. There are several different techniques and methods used
+      to accomplish this task, however this tool is focused on using the LSB (least significant bit) technique to hide data
+      in the RGB(A) values of an image. This is accomplished by converting each pixel of an image into it's RGB(A) values and modifying the least
+      significant bit (the most left bit in each byte for each value in a pixel). This technique is somewhat simple to accomplish and as the least
+      significant bit is the bit modified, detection from simply viewing the image is not possible under reasonable circumstances. </p>
+  </div>
+<div class="toolBox"><h2 class="callToAction">Try it for yourself!</h2>
+<button class="encodeButton"><a href="{% url 'stegoEncoder' %}">Encode</a></button><button class="decodeButton"><a href="{% url 'stegoDecoder' %}">Decode</a></button>
+</div>
+  <script>
+function myFunction() {
+  if (document.getElementsByClassName('hamburger-responsive').length == 0) {
+        var nbItems = document.getElementsByClassName('nav-bar__items');
+        for (var i = 0, length = nbItems.length; i < length; i++) {
+        nbItems[i].style.display = 'block';
+        }
+
+        var navBar = document.getElementsByClassName('nav-bar');
+        for (var i = 0, length = navBar.length; i < length; i++) {
+        navBar[i].style.height = '100vh';
+        navBar[i].style.flexDirection = 'column';
+        navBar[i].style.justifyContent = 'center';
+        navBar[i].style.verticalAlign = 'center';
+        }
+
+        var nbItem = document.getElementsByClassName('nav-bar__item');
+        for (var i = 0, length = nbItem.length; i < length; i++) {
+        nbItem[i].style.display = 'block';
+        nbItem[i].style.justifyContent = 'center';
+        nbItem[i].style.textAlign = 'center';
+        }
+
+        var nbBrand = document.getElementsByClassName('nav-bar__brand');
+        for (var i = 0, length = nbBrand.length; i < length; i++) {
+        nbBrand[i].style.display = 'none';
+        }
+
+        var hbResponse = document.getElementsByClassName('toggle-button');
+        hbResponse[0].classList.add('hamburger-responsive');
+
+        var formContainer = document.getElementsByClassName('form-container');
+        for (var i = 0, length = formContainer.length; i < length; i++) {
+        formContainer[i].style.display = 'none'}
+  }
+ else {
+        var nbItems = document.getElementsByClassName('nav-bar__items');
+        for (var i = 0, length = nbItems.length; i < length; i++) {
+        nbItems[i].style.display = 'none';
+        }
+
+        var navBar = document.getElementsByClassName('nav-bar');
+        for (var i = 0, length = navBar.length; i < length; i++) {
+        navBar[i].style.height = '5rem';
+        navBar[i].style.flexDirection = 'row';
+        navBar[i].style.justifyContent = 'flex-start';
+        navBar[i].style.alignItems = 'center';
+        }
+
+        var nbItem = document.getElementsByClassName('nav-bar__item');
+        for (var i = 0, length = nbItem.length; i < length; i++) {
+        nbItem[i].style.display = 'inline-block';
+        }
+
+        var nbBrand = document.getElementsByClassName('nav-bar__brand');
+        for (var i = 0, length = nbBrand.length; i < length; i++) {
+        nbBrand[i].style.display = 'block';
+        }
+
+        var hbResponse = document.getElementsByClassName('toggle-button');
+        hbResponse[0].classList.remove('hamburger-responsive');
+
+        var formContainer = document.getElementsByClassName('form-container');
+        for (var i = 0, length = formContainer.length; i < length; i++) {
+        formContainer[i].style.display = 'block'
+        }
+
+
+ }
+}
+
+function windowSize() {
+    var width = window.innerWidth;
+    if ( width >= 1051) {
+        var nbItems = document.getElementsByClassName('nav-bar__items');
+        for (var i = 0, length = nbItems.length; i < length; i++) {
+        nbItems[i].style.display = 'block';
+        }
+
+         var toggleBar = document.getElementsByClassName('toggle-button__bar');
+        for (var i = 0, length = toggleBar.length; i < length; i++) {
+        toggleBar[i].style.display = 'none';
+        }
+
+        var toggleButton = document.getElementsByClassName('toggle-button');
+        for (var i = 0, length = toggleButton.length; i < length; i++) {
+        toggleButton[i].style.display = 'none'
+        }
+    }
+    else {
+        var nbItems = document.getElementsByClassName('nav-bar__items');
+        for (var i = 0, length = nbItems.length; i < length; i++) {
+        nbItems[i].style.display = 'none';
+        }
+
+        var toggleBar = document.getElementsByClassName('toggle-button__bar');
+        for (var i = 0, length = toggleBar.length; i < length; i++) {
+        toggleBar[i].style.display = 'block';
+        }
+
+        var toggleButton = document.getElementsByClassName('toggle-button');
+        for (var i = 0, length = toggleButton.length; i < length; i++) {
+        toggleButton[i].style.display = 'block'
+        }
+    }
+}
+</script>
+</body>
+</html>

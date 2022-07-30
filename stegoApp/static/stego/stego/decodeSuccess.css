@@ -1,0 +1,20 @@
+body {
+    background-image: url("/static/stego/stego/images/wall-gabe0e6065_1280.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.textContainer {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8rem;
+    width: 35%;
+    height: 45%;
+    background-color: black;
+}
+
+.secretText {
+    color: white;
+}

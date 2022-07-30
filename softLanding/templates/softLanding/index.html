@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Montserrat:wght@300&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link href="/static/softLanding/custom.css" rel="stylesheet">
+    {% load custom_tags %}
+<title>JM</title>
+</head>
+
+<body onresize="windowSize()">
+    <header class="nav-bar">
+        <div class="nav-bar__brand">
+            <a href="{% url 'index' %}" class="normal-nav">Schwa</a>
+        </div>
+        <nav class="main-nav">
+            <div>
+                <ul class="nav-bar__items">
+                    <li class="nav-bar__item">
+                        <a class="normal-nav" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    <li class="nav-bar__item">
+                        <a class="normal-nav" href="#tool-list">Tools</a>
+                    </li>
+                    <li class="nav-bar__item">
+                        <a class="normal-nav nav-bar__cta" href="{% url 'resume' %}">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+           <button class="toggle-button">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <span class="toggle-button__bar"></span>
+            <span class="toggle-button__bar"></span>
+                <span class="toggle-button__bar"></span></a>
+        </button>
+    </header>
+    <div class="flex-parent">
+        <div class="flex-item_1">
+            <a href="#"><img class="headshot" src="/static/softLanding/images/codeception.jpg"></a>
+        </div>
+        <div class="flex-item_2">
+            <h1 class="about-me__header">About Me</h1>
+            <p class="about-me__text">Ecletic Developer with a passion for all things tech. Over a decade of experience in technical roles delivering the goods.</p>
+        </div>
+    </div>
+    <div class="section-break_header">
+        <h2 class="tools-header" id="tool-list">I have made some cool tools!</h2>
+    </div>
+    <div class="tool-list">
+        <ul class="project-items">
+            <li class="project-item">
+                <div class="image">
+                <a class="link-stylee" href="{% url 'stego' %}"><img class="project-thumbs" src="/static/softLanding/images/data-g15ea37e3f_1920.jpg">
+                <div class="image_overlay">
+                    <div class="image_text">Under the surface</div></a></div></div>
+                <h2 class="tool-title">Stego my eggo</h2>
+                <p class="tool-desc">They say a picture is worth a thousand words, but with this tool it's worth even more...words
+                </p>
+            </li>
+            <li class="project-item">
+                <a href="{% url 'profit' %}"><img class="project-thumbs" src="/static/softLanding/images/stock-g33a70bfe8_1920.jpg"></a><h2 class="tool-title">Python profits</h2>
+                <p class="tool-desc">It's a classic dilemma, you want to YOLO your life savings, but you're unsure which stocks to put all of your hopes, dreams,
+                    and retirement funds into. Not anymore!
+                </p>
+            </li>
+            <li class="project-item">
+                <a href="{% url 'index' %}"><img class="project-thumbs" src="/static/softLanding/images/python-g31f05ab1d_1920.jpg"></a><h2 class="tool-title">This website!</h2>
+                <p class="tool-desc">While you're here this website is built with Python, HTML, CSS3, and JS</p>
+            </li>
+        </ul>
+    </div>
+
+<script>
+function myFunction() {
+  if (document.getElementsByClassName('hamburger-responsive').length == 0) {
+        var nbItems = document.getElementsByClassName('nav-bar__items');
+        for (var i = 0, length = nbItems.length; i < length; i++) {
+        nbItems[i].style.display = 'block';
+        }
+
+        var navBar = document.getElementsByClassName('nav-bar');
+        for (var i = 0, length = navBar.length; i < length; i++) {
+        navBar[i].style.height = '100vh';
+        navBar[i].style.flexDirection = 'column';
+        navBar[i].style.justifyContent = 'center';
+        navBar[i].style.verticalAlign = 'center';
+        }
+
+        var nbItem = document.getElementsByClassName('nav-bar__item');
+        for (var i = 0, length = nbItem.length; i < length; i++) {
+        nbItem[i].style.display = 'block';
+        nbItem[i].style.justifyContent = 'center';
+        nbItem[i].style.textAlign = 'center';
+        }
+
+        var nbBrand = document.getElementsByClassName('nav-bar__brand');
+        for (var i = 0, length = nbBrand.length; i < length; i++) {
+        nbBrand[i].style.display = 'none';
+        }
+
+        var hbResponse = document.getElementsByClassName('toggle-button');
+        hbResponse[0].classList.add('hamburger-responsive');
+  }
+ else {
+        var nbItems = document.getElementsByClassName('nav-bar__items');
+        for (var i = 0, length = nbItems.length; i < length; i++) {
+        nbItems[i].style.display = 'none';
+        }
+
+        var navBar = document.getElementsByClassName('nav-bar');
+        for (var i = 0, length = navBar.length; i < length; i++) {
+        navBar[i].style.height = '5rem';
+        navBar[i].style.flexDirection = 'row';
+        navBar[i].style.justifyContent = 'flex-start';
+        navBar[i].style.alignItems = 'center';
+        }
+
+        var nbItem = document.getElementsByClassName('nav-bar__item');
+        for (var i = 0, length = nbItem.length; i < length; i++) {
+        nbItem[i].style.display = 'inline-block';
+        }
+
+        var nbBrand = document.getElementsByClassName('nav-bar__brand');
+        for (var i = 0, length = nbBrand.length; i < length; i++) {
+        nbBrand[i].style.display = 'block';
+        }
+
+        var hbResponse = document.getElementsByClassName('toggle-button');
+        hbResponse[0].classList.remove('hamburger-responsive');
+
+
+ }
+}
+
+function windowSize() {
+    var width = window.innerWidth;
+    if ( width >= 1051) {
+        var nbItems = document.getElementsByClassName('nav-bar__items');
+        for (var i = 0, length = nbItems.length; i < length; i++) {
+        nbItems[i].style.display = 'block';
+        }
+
+         var toggleBar = document.getElementsByClassName('toggle-button__bar');
+        for (var i = 0, length = toggleBar.length; i < length; i++) {
+        toggleBar[i].style.display = 'none';
+        }
+
+        var toggleButton = document.getElementsByClassName('toggle-button');
+        for (var i = 0, length = toggleButton.length; i < length; i++) {
+        toggleButton[i].style.display = 'none'
+        }
+    }
+    else {
+        var nbItems = document.getElementsByClassName('nav-bar__items');
+        for (var i = 0, length = nbItems.length; i < length; i++) {
+        nbItems[i].style.display = 'none';
+        }
+
+        var toggleBar = document.getElementsByClassName('toggle-button__bar');
+        for (var i = 0, length = toggleBar.length; i < length; i++) {
+        toggleBar[i].style.display = 'block';
+        }
+
+        var toggleButton = document.getElementsByClassName('toggle-button');
+        for (var i = 0, length = toggleButton.length; i < length; i++) {
+        toggleButton[i].style.display = 'block'
+        }
+    }
+}
+</script>
+
+</body>
+</html>

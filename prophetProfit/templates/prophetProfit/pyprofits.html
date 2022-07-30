@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Montserrat:wght@300&family=Ubuntu:wght@300&family=Orbitron:wght@900&display=swap" rel="stylesheet">
+<link href="/static/contact/shared.css" rel="stylesheet">
+    <link href="/static/prophetProfit/pyprofits.css" rel="stylesheet">
+    {% load custom_tags %}
+<title>JM</title>
+</head>
+<body onresize="windowSize()">
+  <header class="nav-bar">
+        <div class="nav-bar__brand">
+            <a href="{% url 'index' %}" class="normal-nav">Schwa</a>
+        </div>
+         <nav class="main-nav">
+            <div>
+                <ul class="nav-bar__items">
+                    <li class="nav-bar__item">
+                        <a class="normal-nav" href="{% url 'contact' %}">Contact</a>
+                    </li>
+                    <li class="nav-bar__item">
+                        <a class="normal-nav" href="{% anchor 'index' 'tool-list' %}">Tools</a>
+                    </li>
+                    <li class="nav-bar__item">
+                        <a class="normal-nav nav-bar__cta" href="{% url 'resume' %}">Resume</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+           <button class="toggle-button">
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <span class="toggle-button__bar"></span>
+            <span class="toggle-button__bar"></span>
+                <span class="toggle-button__bar"></span></a>
+        </button>
+    </header>
+  <div class="bannerImage"></div>
+<div class="textContainer">
+    <h1 class="headerText-profits">Welcome to Wendy's</h1>
+    <p class="aboutText-profits">This project was one of the more involved tools to make.
+    After reading "Trade like a stock market wizard" I decided to try and codify the information in the book.
+        I created a web scraper to scrape ticker symbols from a popular finance site.
+    I created a list of ticker symbols and used the google Sheets API and Python3 to upload the list of ticker symbols
+    and formulas and then leveraged Google Sheets googleFinance functions to complete the sheet.
+        The sheet provides a list of stocks to watch and is directionally agnostic.
+        In the process of creating this tool it became necessary to create my own helper modules
+        for interacting with the Google API services. I am hoping to package these up and give back to the community once
+        I find some time. Spreadsheet is updated weekly as I work on a longer time frame. This tool is for entertainment
+        purposes only and is not meant to be investment advice.
+    </p>
+</div>
+<div class="buttonBox-profits">
+    <button class="showMeTheMoney"><a href="{% url 'thegoods' %}">Show me the MONEY!</a></button>
+</div>
+<script>
+function myFunction() {
+  if (document.getElementsByClassName('hamburger-responsive').length == 0) {
+        var nbItems = document.getElementsByClassName('nav-bar__items');
+        for (var i = 0, length = nbItems.length; i < length; i++) {
+        nbItems[i].style.display = 'block';
+        }
+
+        var navBar = document.getElementsByClassName('nav-bar');
+        for (var i = 0, length = navBar.length; i < length; i++) {
+        navBar[i].style.height = '100vh';
+        navBar[i].style.flexDirection = 'column';
+        navBar[i].style.justifyContent = 'center';
+        navBar[i].style.verticalAlign = 'center';
+        }
+
+        var nbItem = document.getElementsByClassName('nav-bar__item');
+        for (var i = 0, length = nbItem.length; i < length; i++) {
+        nbItem[i].style.display = 'block';
+        nbItem[i].style.justifyContent = 'center';
+        nbItem[i].style.textAlign = 'center';
+        }
+
+        var nbBrand = document.getElementsByClassName('nav-bar__brand');
+        for (var i = 0, length = nbBrand.length; i < length; i++) {
+        nbBrand[i].style.display = 'none';
+        }
+
+        var hbResponse = document.getElementsByClassName('toggle-button');
+        hbResponse[0].classList.add('hamburger-responsive');
+
+  }
+ else {
+        var nbItems = document.getElementsByClassName('nav-bar__items');
+        for (var i = 0, length = nbItems.length; i < length; i++) {
+        nbItems[i].style.display = 'none';
+        }
+
+        var navBar = document.getElementsByClassName('nav-bar');
+        for (var i = 0, length = navBar.length; i < length; i++) {
+        navBar[i].style.height = '5rem';
+        navBar[i].style.flexDirection = 'row';
+        navBar[i].style.justifyContent = 'flex-start';
+        navBar[i].style.alignItems = 'center';
+        }
+
+        var nbItem = document.getElementsByClassName('nav-bar__item');
+        for (var i = 0, length = nbItem.length; i < length; i++) {
+        nbItem[i].style.display = 'inline-block';
+        }
+
+        var nbBrand = document.getElementsByClassName('nav-bar__brand');
+        for (var i = 0, length = nbBrand.length; i < length; i++) {
+        nbBrand[i].style.display = 'block';
+        }
+
+        var hbResponse = document.getElementsByClassName('toggle-button');
+        hbResponse[0].classList.remove('hamburger-responsive');
+ }
+}
+
+function windowSize() {
+    var width = window.innerWidth;
+    if ( width >= 1051) {
+        var nbItems = document.getElementsByClassName('nav-bar__items');
+        for (var i = 0, length = nbItems.length; i < length; i++) {
+        nbItems[i].style.display = 'block';
+        }
+
+         var toggleBar = document.getElementsByClassName('toggle-button__bar');
+        for (var i = 0, length = toggleBar.length; i < length; i++) {
+        toggleBar[i].style.display = 'none';
+        }
+
+        var toggleButton = document.getElementsByClassName('toggle-button');
+        for (var i = 0, length = toggleButton.length; i < length; i++) {
+        toggleButton[i].style.display = 'none'
+        }
+    }
+    else {
+        var nbItems = document.getElementsByClassName('nav-bar__items');
+        for (var i = 0, length = nbItems.length; i < length; i++) {
+        nbItems[i].style.display = 'none';
+        }
+
+        var toggleBar = document.getElementsByClassName('toggle-button__bar');
+        for (var i = 0, length = toggleBar.length; i < length; i++) {
+        toggleBar[i].style.display = 'block';
+        }
+
+        var toggleButton = document.getElementsByClassName('toggle-button');
+        for (var i = 0, length = toggleButton.length; i < length; i++) {
+        toggleButton[i].style.display = 'block'
+        }
+    }
+}
+</script>
+</body>
+</html>
