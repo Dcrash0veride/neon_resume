@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'k%5^m#cj!)m+tvjt3*i710@41u$u*ty9iw4(+5*o5pi)=odh_2'
+SECRET_KEY = 'soMuchfor.gitIgnorethenHuh'
 
 # Set Secure Session Cookie
 SESSION_COOKIE_SECURE = True
