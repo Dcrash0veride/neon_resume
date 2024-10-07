@@ -1,5 +1,8 @@
 name: Truffle Secret Scan
-on: [push]
+on:
+  workflow_dispatch:
+  push:
+  pull_request:
 jobs:
   TruffleHog:
     runs-on: ubuntu-latest
